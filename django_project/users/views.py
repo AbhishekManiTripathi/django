@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 #from django.contrib.auth.forms import UserCreationForm # django inbulit class which can be converted into html form
 from django.contrib import messages
 from .forms import UserRegisterForm
-# Create your views here.
+from django.contrib.auth.decorators import login_required 
 
 # UserCreationForm has been replaced by UserRegisterForm
 def register(request):
@@ -17,6 +17,10 @@ def register(request):
     else :
         form = UserRegisterForm()
     return render(request, 'users/register.html', {'form': form} ) 
+
+@login_required # now this method will run only when user is logged (to prevet direct writing of end points)
+def profile(request):
+    return render(request, 'users/profile.html')    
 
 
 
