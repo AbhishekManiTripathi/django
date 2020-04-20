@@ -130,3 +130,13 @@ LOGIN_REDIRECT_URL = 'blog-home'
 LOGIN_URL = 'login'
 
 # /login/?next=/profile/ this next parameter will take care that user was wishing to go on his profile so even after login he will taken directly to profile and not on home page which was coming after login
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_HOTST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+# EMAIL_HOST_USER = os.environ.get('email')
+# EMAIL_HOST_PASSWORD = os.environ.get('email_password')   
+EMAIL_HOST_USER = 'maniatripathi007@gmail.com'
+EMAIL_HOST_PASSWORD = 'baguvix.170507'   
